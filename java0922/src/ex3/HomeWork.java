@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package ex3;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,6 +16,10 @@ import javax.swing.JOptionPane;
  */
 public class HomeWork extends javax.swing.JFrame {
 
+    private int x, y, size;
+    private Color col;
+    String n;
+    private static int angle;
     /**
      * Creates new form HomeWork
      */
@@ -30,7 +36,20 @@ public class HomeWork extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        canvas1 = new java.awt.Canvas();
+        can = new java.awt.Canvas(){
+            @Override
+            public void update(Graphics g) {
+                paint(g);
+            }
+
+            @Override
+            public void paint(Graphics g) {
+                g.setColor(col);
+                g.drawArc(300, 100, 100, 100, 0, angle);
+                g.setColor(col);
+                g.fillOval(x, y, size, size);
+            }
+        };
         jPanel1 = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
@@ -39,18 +58,28 @@ public class HomeWork extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        canvas1.setBackground(new java.awt.Color(153, 255, 255));
-        canvas1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        can.setBackground(new java.awt.Color(153, 255, 255));
+        can.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                canvas1MouseDragged(evt);
+                canMouseDragged(evt);
             }
         });
 
         jPanel1.setBackground(new java.awt.Color(153, 51, 0));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "빨", "주", "노", "초" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "색", "빨", "주", "노", "초" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Click");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         test.setText("Test");
         test.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +88,7 @@ public class HomeWork extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10", "20", "30", "40" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "크기", "10", "20", "30", "40" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,7 +124,7 @@ public class HomeWork extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(can, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
@@ -103,7 +132,7 @@ public class HomeWork extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(can, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -112,18 +141,45 @@ public class HomeWork extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void canvas1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_canvas1MouseDragged
+    private void canMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_canMouseDragged
         
-        //그림을 그리고 
-        
-    }//GEN-LAST:event_canvas1MouseDragged
+        x = evt.getX();
+        y = evt.getY();
+        n = (String) jComboBox2.getSelectedItem();
+        size = Integer.parseInt(n); //사이즈가 인트니까 콤보박스에서받은스트링을 인트로 바꿔
+        int i =jComboBox1.getSelectedIndex();
+        Color [] arr = {null, Color.RED , Color.ORANGE, Color.YELLOW, Color.GREEN }; //컬러 배열을 만들어서 각 주소에 값넣어주기.
+        col=arr[i];
+        can.repaint();
+    }//GEN-LAST:event_canMouseDragged
 
     private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
-       int index = jComboBox1.getSelectedIndex(); //인덱스
+        int index = jComboBox2.getSelectedIndex(); //인덱스
         String m = (String) jComboBox1.getSelectedItem(); //선택값
         JOptionPane.showMessageDialog(this, "선택한 색 : " + index + " : " + m);
         
     }//GEN-LAST:event_testActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+               new Thread() {
+
+                    @Override
+                    public void run() {
+                        for (angle = 0; angle <= 360; angle += 10) {
+                            try {
+                                Thread.sleep(100);
+                                can.repaint();
+                            } catch (InterruptedException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+                }.start();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,10 +214,11 @@ public class HomeWork extends javax.swing.JFrame {
                 new HomeWork().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Canvas canvas1;
+    private java.awt.Canvas can;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
