@@ -12,11 +12,11 @@ import java.util.Iterator;
 //전용컬렉션을 도입
 public class Ex3_Generic {
     public static void main(String[] args) {
-        //Vector와 ArrayList의 차이
-        //Vector가 동기화를 지원하는 기능! 있지만 다른 부분으로 대체가능!
-        //Generic - String만 담을 수 있는 ArrayList
-        //jdk7부터 변경된 요소 : new ArrayList<>()가 6이하는 오류
-        //라서 아래와 같이 표현
+//        Vector와 ArrayList의 차이
+//        Vector가 동기화를 지원하는 기능! 있지만 다른 부분으로 대체가능!
+//        Generic - String만 담을 수 있는 ArrayList
+//        jdk7부터 변경된 요소 : new ArrayList<>()가 6이하는 오류
+//        라서 아래와 같이 표현
         ArrayList<String> str = new ArrayList<String>();
         ArrayList<Integer> num = new ArrayList<Integer>();
         str.add("ok");
