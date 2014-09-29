@@ -45,7 +45,7 @@ public class Ex2_Server {
                 //printwriter의 특징
                 //1차스트림/ 2차스트림(버퍼의 기능)
                 //바이트스트림/문자스트림 모두사용이 가능.
-                //오토플러시 : 자동으로 버퍼를 비워주는 역할을 생성자에서 인자로 지정
+                //오토플러시 : 자동으로 버퍼를 비워주는 역할을 생성자에서 인자로 지정.
                 //문자열을 한줄단위로 바이트스트림으로 연결 하는는것이 장점.
                 PrintWriter out = new PrintWriter(new BufferedOutputStream(os), true);
                 //--클라이언트의 소켓 **으로 연결된 스트림을 통해서
