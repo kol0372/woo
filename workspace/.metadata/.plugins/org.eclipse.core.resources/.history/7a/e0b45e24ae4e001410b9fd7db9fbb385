@@ -1,0 +1,46 @@
+package kr.or.kosta.and1008;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class Exam2 extends Activity implements OnClickListener {
+	
+	private Button btn1,btn2,btn3;
+	private TextView total, user, cpu, win,result ;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.exam2);
+		
+		btn1 = (Button)(findViewById(R.id.exambtn1));
+		btn2 = (Button)(findViewById(R.id.exambtn2));
+		btn3 = (Button)(findViewById(R.id.exambtn3));
+		
+		total = (TextView) findViewById(R.id.t);
+		user = (TextView) findViewById(R.id.u);
+		cpu = (TextView) findViewById(R.id.c);
+		win = (TextView) findViewById(R.id.w);
+		
+		btn1.setOnClickListener(this);
+		btn2.setOnClickListener(this);
+		btn3.setOnClickListener(this);
+		
+		
+		
+		
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -35,7 +35,7 @@ public class SelectDemo {
             rs = pstmt.executeQuery();
             //돌려받은 커서를 사용해서 데이터를 출력
             //rs.next()는 커서가 있을 경우 true
-            while(rs.next()){
+            while(rs.next()){//커서를 이동시키면서 다음꺼 있을때까정
                 //rs.getXX("컬럼번호||컬럼명")
                 System.out.println("번호 : " + rs.getInt("num"));
                 System.out.println("아이디 : " + rs.getString("did"));

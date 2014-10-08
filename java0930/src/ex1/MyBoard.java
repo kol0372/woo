@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
  * @author kosta
  */
 public class MyBoard extends javax.swing.JFrame {
+//1.카드 레이아웃 설정
 
     private CardLayout card;
     Connection con = null;
@@ -31,6 +32,7 @@ public class MyBoard extends javax.swing.JFrame {
      */
     public MyBoard() {
         initComponents();
+        //2.카드레이아웃 생성
         card = (CardLayout) pp.getLayout();
     }
 
@@ -75,6 +77,11 @@ public class MyBoard extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         pwdv = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        listbtn = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
+        searchValue = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,7 +89,11 @@ public class MyBoard extends javax.swing.JFrame {
 
         jLabel1.setText("아이디");
 
+        id.setText("mypeople");
+
         jLabel2.setText("비밀번호");
+
+        pw.setText("new09");
 
         logInBtn.setText("접속");
         logInBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +135,7 @@ public class MyBoard extends javax.swing.JFrame {
                     .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(logInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         pp.add(p1, "card2");
@@ -184,10 +195,13 @@ public class MyBoard extends javax.swing.JFrame {
                     .addComponent(contentF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
 
         pp.add(p2, "card3");
+
+        p3.setBackground(new java.awt.Color(255, 153, 153));
+        p3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 204, 204), new java.awt.Color(255, 153, 153), new java.awt.Color(255, 204, 204), new java.awt.Color(255, 204, 204)));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -231,6 +245,22 @@ public class MyBoard extends javax.swing.JFrame {
             }
         });
 
+        listbtn.setText("list");
+        listbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listbtnActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "검색", "이름", "email", "아이디" }));
+
+        jButton6.setText("검색");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout p3Layout = new javax.swing.GroupLayout(p3);
         p3.setLayout(p3Layout);
         p3Layout.setHorizontalGroup(
@@ -240,39 +270,48 @@ public class MyBoard extends javax.swing.JFrame {
                 .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p3Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(47, Short.MAX_VALUE))
+                        .addContainerGap(43, Short.MAX_VALUE))
                     .addGroup(p3Layout.createSequentialGroup()
-                        .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(p3Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(pwdv))
-                            .addGroup(p3Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(emailTF))
-                            .addGroup(p3Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(nameTF))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p3Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addComponent(searchValue, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ridv, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton6))
                             .addGroup(p3Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p3Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(p3Layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(35, 35, 35)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(dateTF))))
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton5)
+                                        .addComponent(pwdv))
+                                    .addGroup(p3Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(emailTF))
+                                    .addGroup(p3Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(nameTF))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p3Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ridv, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(p3Layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(p3Layout.createSequentialGroup()
+                                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(67, 67, 67)
+                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(dateTF))))
+                                .addGap(30, 30, 30)
+                                .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(listbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         p3Layout.setVerticalGroup(
@@ -283,10 +322,11 @@ public class MyBoard extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(ridv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(pwdv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pwdv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(listbtn))
                 .addGap(18, 18, 18)
                 .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -300,17 +340,34 @@ public class MyBoard extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(dateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addGap(18, 18, 18)
+                .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6))
+                .addGap(21, 21, 21))
         );
 
         pp.add(p3, "card4");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+        );
+
+        pp.add(jPanel1, "c5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -337,7 +394,7 @@ public class MyBoard extends javax.swing.JFrame {
                 System.out.println("Connection획득!" + con);
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 card.show(pp, "card3");
-            } else if ((user.equals("myman2")) && (pass.equals("new09"))) {
+            } else if ((user.equals("mypeople")) && (pass.equals("new09"))) {
                 con = DriverManager.getConnection(url, user, pass);
                 System.out.println("Connection획득!" + con);
                 Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -377,19 +434,19 @@ public class MyBoard extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         StringBuffer sql = new StringBuffer();
-        sql.append("select num,rid,rname,email,birth,rdate from member ");
-        sql.append("order by 1 desc");
+        sql.append("select deptno,did,dname,email,ddate from member ");
+        sql.append("order by 1 asc");
 
         try {
             pstm2 = con.prepareStatement(sql.toString());
             rs = pstm2.executeQuery();
             while (rs.next()) {
 
-                jTextArea1.append("번호 :" + rs.getInt("num") + "\n");
-                jTextArea1.append("아이디 :" + rs.getString("rid") + "\n");
-                jTextArea1.append("이름 :" + rs.getString("rname") + "\n");
+                jTextArea1.append("번호 :" + rs.getInt("deptno") + "\n");
+                jTextArea1.append("아이디 :" + rs.getString("did") + "\n");
+                jTextArea1.append("이름 :" + rs.getString("dname") + "\n");
                 jTextArea1.append("이메일 :" + rs.getString("email") + "\n");
-                jTextArea1.append("가입일 :" + rs.getString("rdate") + "\n");
+                jTextArea1.append("가입일 :" + rs.getString("ddate") + "\n");
                 jTextArea1.append("------------------------------------" + "\n");
             }
         } catch (SQLException ex) {
@@ -442,21 +499,44 @@ public class MyBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-            String idv = ridv.getText().trim();
-        int resNUm = findIdResult(idv); 
+        String idv = ridv.getText().trim();
+        int resNUm = findIdResult(idv);
         String msg = "";
         if (resNUm > 0) {
-            JOptionPane.showMessageDialog(this,msg);
+            JOptionPane.showMessageDialog(this, msg);
             msg = "이미존재하고있는 아이디";
             ridv.setText("");
             ridv.requestFocus();
         } else {
             msg = "사용가능한 아이디";
-            JOptionPane.showMessageDialog(this,msg);
+            JOptionPane.showMessageDialog(this, msg);
             pwdv.requestFocus();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
- private int findIdResult(String idv) {
+
+    private void listbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listbtnActionPerformed
+        card.show(pp, "c5");
+    }//GEN-LAST:event_listbtnActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        
+        String search = searchValue.getText().trim();
+        String combo = jComboBox1.getSelectedItem().toString().trim();
+        String st= "";
+        if (combo.equals("이름")) {
+            st = "dname";
+        } else if(combo.equals("email")){
+            st= "email";
+        }else if(combo.equals("아이디")){
+            st="did";
+        };
+        getSearch(search,st);
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+    private int findIdResult(String idv) {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -470,7 +550,7 @@ public class MyBoard extends javax.swing.JFrame {
             con = DriverManager.getConnection(url, user, pass);
             StringBuffer sql = new StringBuffer();
             sql.append("select count(*) cnt from member ");
-            sql.append(" where rid=?");
+            sql.append(" where did=?");
             pstmt = con.prepareStatement(sql.toString());
             pstmt.setString(1, idv);
             rs = pstmt.executeQuery();
@@ -485,6 +565,35 @@ public class MyBoard extends javax.swing.JFrame {
         return resN;
 
     }
+
+    public void getSearch(String sv, String st) {
+        //sv는 검색값, st는 검색타입
+        System.out.println(sv +","+st );
+              StringBuffer sql = new StringBuffer();
+        sql.append("select * from member ");
+        sql.append(" where ").append(st).append(" like");
+        sql.append(" ?");       
+        sql.append(" order by 1 asc");
+
+        try {
+            pstm2 = con.prepareStatement(sql.toString());
+            pstm2.setString(1, "%"+ sv+"%");
+            rs = pstm2.executeQuery();
+            while (rs.next()) {
+
+                jTextArea1.append("번호 :" + rs.getInt("deptno") + "\n");
+                jTextArea1.append("아이디 :" + rs.getString("did") + "\n");
+                jTextArea1.append("이름 :" + rs.getString("dname") + "\n");
+                jTextArea1.append("이메일 :" + rs.getString("email") + "\n");
+                jTextArea1.append("가입일 :" + rs.getString("ddate") + "\n");
+                jTextArea1.append("------------------------------------" + "\n");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -530,6 +639,8 @@ public class MyBoard extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -540,8 +651,10 @@ public class MyBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton listbtn;
     private javax.swing.JButton logInBtn;
     private javax.swing.JTextField nameTF;
     private javax.swing.JPanel p1;
@@ -551,6 +664,7 @@ public class MyBoard extends javax.swing.JFrame {
     private javax.swing.JTextField pw;
     private javax.swing.JTextField pwdv;
     private javax.swing.JTextField ridv;
+    private javax.swing.JTextField searchValue;
     private javax.swing.JTextField subF;
     private javax.swing.JTextField writerF;
     // End of variables declaration//GEN-END:variables
