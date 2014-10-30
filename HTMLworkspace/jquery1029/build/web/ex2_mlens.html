@@ -1,0 +1,57 @@
+<!--
+Document : ex2_mlens
+Created on : 2014. 10. 29, 오후 2:30:06
+Author : kosta
+-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #green_monster {
+                position: relative;
+                width: 640px;
+                height: auto;
+                margin: 0 auto;
+                border: 12px solid #fff;
+                border-radius: 10px;
+                box-shadow: 1px 1px 5px rgba(50,50,50 0.5);
+                float: left;
+            }
+        </style>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/jquery.mlens-1.5.min.js"></script>
+        <script src="js/jquery.mlens-1.5.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+                $("#green_monster").mlens(
+                        {
+                            imgSrc: $("#green_monster").attr("data-big"), // path of the hi-res version of the image
+                            imgSrc2x: $("#green_monster").attr("data-big2x"), // path of the hi-res @2x version of the image
+                            //for retina displays (optional)
+                            lensShape: "circle", // shape of the lens (circle/square)
+                            lensSize: 180, // size of the lens (in px)
+                            borderSize: 4, // size of the lens border (in px)
+                            borderColor: "#fff", // color of the lens border (#hex)
+                            borderRadius: 0, // border radius (optional, only if the shape is square)
+                            imgOverlay: $("#green_monster").attr("data-overlay"), // path of the overlay image (optional)
+                            overlayAdapt: false, // true if the overlay image has to adapt to the lens size (true/false)
+                            zoomLevel: 2                                    // zoom level multiplicator (number)
+                        });
+            });
+        </script>
+    </head>
+    <body>
+        <img id="green_monster" src="images/cap.JPG" 
+             alt="green monster graffiti by Kotzian" 
+             data-big="images/cap.JPG" 
+             data-big2x="images/cap@2x.JPG" 
+             data-overlay="images/overlay.png" />
+    </body>
+</html>

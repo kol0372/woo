@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ex1;
+package ex2;
 
 import java.awt.CardLayout;
 import java.sql.Connection;
@@ -237,7 +237,7 @@ public class MyMember extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-//selectcount*) from where rid  \
+//select count(*) from where rid  
     private int findIdResult(String idv) {
         Connection con = null;
         PreparedStatement pstmt = null;

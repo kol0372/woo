@@ -1,0 +1,50 @@
+<!--
+Document : ex5_get
+Created on : 2014. 10. 30, 오후 5:09:11
+Author : kosta
+-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="EUC-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div > input {background: whitesmoke; width: 200px ; height: 50px ; margin: auto }
+        div {background: wheat; width: 200px ; height: 50px ; margin: auto}
+        
+    </style>
+         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            //get방식아님
+            $(document).ready(function (){
+                //키에서 손을 땠을때.
+                $('#name').keyup(function (){
+                    $('#msg').html($(this).val());
+                    //비동기식을 사용해서 url에 디비연결한부분으로 통해 데이터 조회
+                    $.ajax({
+                       url:"ex5_postData.jsp",
+                       data:{'id':$(this).val()},
+                       //전달받은 값을 콜백하여 div에 출력
+                       success:function (data){
+                           $('#msg').html(data);
+                       },
+                       error:function (e){
+                           console.log("Error"+e);
+                       }
+                    });
+                });
+            });
+        </script>
+  </head>
+  <body>
+      <div>
+          <input type="text" id="name">
+      </div>
+      
+      <div id="msg"></div>
+  </body>
+</html>

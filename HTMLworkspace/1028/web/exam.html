@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            //0.3초동안 띵띵띵 five만 다른색 주기 
+            $(document).ready(function() {
+                var num = 0;
+                var inter =  function setInterval {
+                    var color;
+                    var $node2 = $('div').children().eq(num);
+
+                    if ($node2.html() == 'five') {
+                        //text,html : 컨텐츠
+                        color='pink';
+                    }else{
+                        color='red';
+                    }
+                    $node2.css({'color': 'blue', 'fontSize': '20px', 'background': color});
+                    num++;
+                }, 300);
+
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <em>one</em>
+            <a>two</a>
+            <a>three</a>
+            <a>four</a>
+            <b>five</b>
+            <em>six</em>
+
+        </div>
+
+    </body>
+</html>
+

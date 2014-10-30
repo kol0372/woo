@@ -1,0 +1,42 @@
+<!--
+Document : InnerFade
+Created on : 2014. 10. 29, 오후 1:46:46
+Author : kosta
+-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{margin: 0px ; padding: 0px}
+            ul{list-style:  none}
+            img{width:  200px;}
+        </style>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/jquery.innerfade.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#inner_fade').innerfade({
+                    animationtype: 'slide',
+                    speed: 750,
+                    timeout: 2000,
+                    type: 'random',
+                    containerheight: '1em'
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <ul id="inner_fade">
+            <li><img src="images/ddd.JPG"></li>
+            <li><img src="images/corgi.JPG"></li>
+            <li><img src="images/cake.JPG"></li>
+            <li><img src="images/cheese.JPG"></li>
+        </ul>
+    </body>
+</html>

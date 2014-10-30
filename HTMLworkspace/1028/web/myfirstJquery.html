@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+//            브라우저가 시작될때 모든 resource자원을 읽고 나서 시작한다.
+//            window.onload=function (){
+//                
+//            }
+//  $(document).ready(function(){}); 는 DOm만 기다리다가 실행.
+            $(document).ready(function() {
+                //$에 Element, id, class로 선택자를 사용할 수 있다.
+                //css('스타일','값')-체이닝방식: css뿐만 아니라 이요소가 다른 매서드에서도
+                //사용할거면 써 왜나면 다른거 다 붙일 수 있으니까.
+                //$('Eliment')->3개, 집합요소(NodeList)
+                $('div').css('width', '300px').css('height', '30px').css('background', 'pink').css('marginTop', '30px');
+                //css('스타일','값')-맵방식 : 가독성이 좋음.
+                $('#p1').css({'color': 'red', 'fontSize': '30pt', 'width': '600px',
+                    'border': '1px solid pink', 'textAlign': 'center'})
+//.c1 에서 .은 클래스 id 찾을때 사용
+                $('.c1').css('width', '300px').css('height', '30px')
+                        .css('background', 'pink').css('marginTop', '30px');
+                $('div,span').text('woori');
+            });
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div>TODO write content</div>
+        <div>TODO write content</div>
+        <p id="p1">TODO write content</p>
+        <span class="c1">TODO write content</span>
+        <p class="c1">TODO write content</p>
+    </body>
+</html>

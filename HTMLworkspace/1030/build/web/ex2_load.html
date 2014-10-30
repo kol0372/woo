@@ -1,0 +1,42 @@
+<!--
+Document : ex2_load
+Created on : 2014. 10. 30, 오전 10:17:27
+Author : kosta
+-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .wrap{
+                background: coral;
+                width : 200px;
+            }
+        </style>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.w').css({width: '100px', margin: 'auto'});
+                $('#btn1').click(function() {
+                    $('#cont').addClass('wrap');
+                    //load함수를 사용해서 ex2_load_test.jsp를 가져옴 
+                    $('#cont').load('ex2_loadTest.jsp p');
+                });
+                $('#btn2').click(function() {
+                    $('#cont').addClass('wrap');
+                    $('#cont').load('ex2_loadTest.jsp p,span');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="w"><input type="button" value="PLoad" id="btn1"></div><br>
+        <div class="w"><input type="button" value="PSPanLoad" id="btn2"></div>
+        <div id="cont"></div>
+    </body>
+</html>

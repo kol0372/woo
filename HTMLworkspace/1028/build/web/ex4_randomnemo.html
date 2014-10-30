@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            //5가시 색으로 지속적으로 변경
+            //setInterval(fn,1000);
+
+            $(document).ready(function() {
+                //JQuery는 여기 안에 변수 있어야해
+                var array = ["red", "blue", "pink", "yellow", "green"];
+                var n = 0;
+
+                var inter = setInterval(function() {
+                    var col = Math.floor(Math.random() * 256)
+                    var col2 = Math.floor(Math.random() * 256)
+                    var col3 = Math.floor(Math.random() * 256)
+                    var Col = "rgb(" + col + "," + col2 + "," + col3 + ")";
+                    if (n >= array.length) {
+                        n = 0;
+                    }
+                    $('#divv').css('width', '300px').css('height', '30px').
+                            css('background', array[n]).css('marginTop', '30px')
+                            .text('woori');
+                    $('#divb').css('width', '300px').css('height', '30px').
+                            css('background', Col).css('marginTop', '30px')
+                            .text('woori');
+                    n++;
+                }, 100);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="divv">JQuery</div>
+        <div id="divb">JQuery</div>
+    </body>
+</html>
