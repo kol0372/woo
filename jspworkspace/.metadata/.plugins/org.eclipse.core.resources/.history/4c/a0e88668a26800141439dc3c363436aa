@@ -1,0 +1,61 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import vo.PageVO;
+import control.ActionForward;
+import dao.BoardDao;
+
+public class BoardListModel implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest req,
+			HttpServletResponse resp) throws IOException {
+//페이지 설정을 위해 객체를 생성
+		PageVO pageInfo = new PageVO();
+		//한페이지에 보여줄 라인의 수
+		int rowsPerPage = 5;
+		//한페이지에 보여줄 페이지 블럭의 수
+		int pagesPerBlock = 5;
+		//페이지 값
+		int cuttentPage = Integer.parseInt(req.getParameter("page"));
+		// 
+		int currentBlock = 0;
+		//페이지 값에 따라서 페이지 블록을 연산
+		if (cuttentPage % pagesPerBlock == 0) {
+			currentBlock = cuttentPage / pagesPerBlock;
+
+		} else {
+			currentBlock = cuttentPage / pagesPerBlock + 1;
+		}
+		//현재페이지 값에 따른 startRow(sql문에서 between절에 들어갈 값)
+		//1ㅠㅔ이일때는 1부터 , 2페이지는 6부터 
+		int startRow = (cuttentPage - 1) * rowsPerPage + 1;
+		//1*5=5 까지, 2*5=10
+		int endRow = cuttentPage * rowsPerPage;
+		//전체데이터값얻기
+		int totalRows = BoardDao.getDao().getTotalCount();
+		
+		int totalPages = 0;
+		if (totalRows % rowsPerPage == 0) {
+			totalPages = totalRows / rowsPerPage;
+		} else {
+			totalPages = totalPages / rowsPerPage + 1;
+		}
+		
+		int totalBlock = 0;
+		if (totalPages % pagesPerBlock == 0) {
+			pagesPerBlocks = totalPages / pagesPerBlock;
+		} else {
+			totalBlocks = totalPages / pagesPerBlock + 1;
+		}
+		pageInfo.setCurrentPage(currentPage);
+		pageInfo.setCurrentBlock(currentBlock);
+		pageinfo.setR
+		return null;
+	}
+
+}

@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!--data-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>TODO supply a title</title>
+<meta charset="EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+progress {
+	display: none;
+}
+</style>
+</head>
+<script>
+	var progress = null;
+	//주석예 ) $ (document).ready(function(){}); Jquery로 바꿔보자. 
+	window.onload = function() {
+		progress = document.querySelector("progress");
+		//upload버튼을 클릭하면 파일을 업로드 한다.
+		//queryselector= $(button)
+		document.querySelector("button").onclick = function() {
+			fileUpload();
+		};
+	};
+
+	function fileupload() {
+		var uploadFile = document.querySelector("input");
+		vat
+		xhr = new XMLHttpRequest();
+		//업로드 시작 - >xhr.download.onloadstart하면 download
+		xhr.upload.onloafstart = function(e) {
+			progress.value = 0;
+			//progress의 스타일을 none에서 보이도록 설정
+			progress.style.display = "inline";
+		};
+		// 업로드 도중에 계속 발생 - > 
+		xhr.upload.onprogress = function(e) {
+			progress.value = e.loaded / e.total;
+		};
+		xhr.upload.onload = function(e) {
+			progress.style.display = "none";
+		};
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				document.querySelector("div").innerHTMl = xhr.responseText
+						+ "<br>";
+			}
+			;
+		};
+		xhr.open("POST", "http://localhost:8084/jsp_1103/uploadServise1103.jsp",
+				true);
+		xhr.setRequestHeader("X-File-Name",
+				encodeURIComponent(uploadfile.files[0].name));
+		xhr.send(uploadFile.file[0]);
+	};
+</script>
+<body>
+	<h1>XMLHTTPREQUEST level2를 이용한 파일 업로드</h1>
+	<input type="file">
+	<button>upload</button>
+	<progress>0%</progress>
+	<div></div>
+</body>
+</html>

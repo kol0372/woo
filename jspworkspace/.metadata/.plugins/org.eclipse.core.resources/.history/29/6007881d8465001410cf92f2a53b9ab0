@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<style>
+#logo {
+	width: 310px;
+	height: 70px;
+	text-indent: -999;
+	background-image: url('img/ddd.JPG');
+	background-repeat: no-repeat;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="cordova.js" charset="euc-kr"></script>
+
+<script>
+	$(document).ready(function() {
+		$('#main ul li a').click(function() {
+			$('#sub1 div h2').html($(this).children('h3').text());
+	//		$('#sub1 div p img').src($(this).children('img').src());
+			$('#cont').html($(this).children('p').text());
+			$('#sub1 div p img').attr('src',function(){
+                 return "img/"+this.children('img');
+                 });
+
+		});
+	});
+</script>
+</head>
+<body>
+	<div data-role="page" data-theme="b" id="main">
+
+		<div data-role="header">
+			<h1 id="logo1">kosta86기 파견 기자 뉴스</h1>
+
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li><a href="#sub1" data-role="button" data-transition="flip">
+						<img src="img/ad.png">
+						<h3>몽골:징기스칸</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+				<li><a href="#sub1" data-role="button" data-transition="flip">
+						<img src="img/ae.png">
+						<h3>중국</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+				<li><a href="#sub1" data-role="button" data-transition="flip">
+						<img src="img/af.png">
+						<h3>일본</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+				<li><a href="#sub1" data-role="button" data-transition="flip">
+						<img src="img/ag.png">
+						<h3>우즈백</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+				<li><a href="#sub1" data-role="button" data-transition="flip">
+						<img src="img/al.png">
+						<h3>인도</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+			</ul>
+		</div>
+		<div data-role="footer">
+			<h3 id="logo">footer</h3>
+		</div>
+	</div>
+
+
+	<div data-role="page" id=sub1 data-theme="b">
+		<div data-role="header">
+			<h1 id="logo">kosta86기 파견 기자 뉴스</h1>
+
+		</div>
+		<div data-role="content" class="content">
+			<h2></h2>
+			<p id="imgtarget">
+				<img>
+			</p>
+			<p id="cont"></p>
+			<p>
+				<a href="#main" data-role="button" data-transition="flip"></a>
+			</p>
+		</div>
+		<div data-role="footer"></div>
+	</div>
+</body>
+</html>

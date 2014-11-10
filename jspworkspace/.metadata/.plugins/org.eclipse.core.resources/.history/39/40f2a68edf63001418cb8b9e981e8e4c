@@ -1,0 +1,100 @@
+package dao;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import vo.MjoinVO;
+import conn.ConnUtil;
+
+
+public class JoinDao {
+	// 현재 ImgDirDao객체는 서블릿이나 JSP에서 Model1방식으로 설계 되었다.
+
+	// 스레드가 접근할 자원이기 때문에 동기화 처리가 되어야 한고,
+
+	// 자원이 한정된 connection을 받아서 사용해야 하기 때문에 싱글톤 디자인 패턴을 사용해서
+	// 처음에 생성시 스태틱 영역에 하나만 생성시켜놓고 그 후엔 이미 생성된 주소로 사용하도록 한다.
+	// 안드로이드에서 그리드뷰일때.. 이미 여러분은 싱글톤의 경험이 있어요 네
+
+	private static JoinDao dao;
+
+	public synchronized static JoinDao getDao() {
+		if (dao == null)
+			dao = new JoinDao();
+		return dao;
+	}
+
+	// 재사용에 입각한 SQL문을 관리하는 메서드를 만들어보자.
+	// insert
+	public boolean addJoin(MjoinVO vo) {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		StringBuffer sql = new StringBuffer();
+		sql.append("insert into mjoin values(mjoin_seq.nextVal,?,?,?,?, sysdate)");
+		try {
+			con = ConnUtil.getDs();
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, vo.getPwd());
+			pstmt.setString(3, vo.getName());
+			pstmt.setString(4, vo.getInfo());
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		} finally {
+
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+//	public ArrayList<MjoinVO> getList() {
+//		Connection con = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//
+//		ArrayList<MjoinVO> ar = new ArrayList<MjoinVO>();
+//		StringBuffer sql = new StringBuffer();
+//		sql.append("select num, writer, imgpath, hit, edate from imgdir order by");
+//
+//		try {
+//			con = ConnUtil.getDs();
+//			pstmt = con.prepareStatement(sql.toString());
+//			rs = pstmt.executeQuery();
+//			while (rs.next()) {
+//				//하나의 row를 저장할 vo객체
+//				MjoinVO v = new MjoinVO();
+//				v.setNum(rs.getInt("num"));
+//				v.setWriter(rs.getString("writer"));
+//				v.setImgpath(rs.getString("imgpath"));
+//				v.setHit(rs.getInt("hit"));
+//				v.setEdate(rs.getString("edate"));
+//				//ArrayList에 각각의 데이터를 저장한 vo의 주소를 기억시킨다.
+//				ar.add(v);
+//			}
+//
+//			rs.close();
+//			pstmt.close();
+//			con.close();
+//			
+//		} catch (SQLException e) {
+//
+//		}
+//		return ar;
+//	}
+}

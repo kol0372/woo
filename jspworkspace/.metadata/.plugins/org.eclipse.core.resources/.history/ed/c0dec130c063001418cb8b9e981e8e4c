@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!--data-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+	
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<header class="hd">
+		<h1>Include연습</h1>
+		<h2>Include지시자의 top,jsp영역</h2>
+			<nav>
+				<ul>
+					<li><a href="">메뉴1</a></li>
+					<li><a href="">메뉴1</a></li>
+					<li><a href="">메뉴1</a></li>
+					<li><a href="">메뉴1</a></li>
+					<li><a href="">메뉴1</a></li>
+					<li><a href="">메뉴1</a></li>
+					<li><a href="">메뉴1</a></li>
+					
+				</ul>
+			</nav>
+		</header>
+	</div>
+</body>
+</html>

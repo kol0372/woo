@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!--data-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+	
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<header class="hd">
+			<h1>Include연습</h1>
+			<h2>Include지시자의 top,jsp영역</h2>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="">메뉴1</a></li>
+				<li><a href="">메뉴1</a></li>
+				<li><a href="">메뉴1</a></li>
+				<li><a href="">메뉴1</a></li>
+				<li><a href="">메뉴1</a></li>
+				<li><a href="">메뉴1</a></li>
+				<li><a href="">메뉴1</a></li>
+
+			</ul>
+		</nav>
+		<article>
+			<header>
+				<h2>여기는 웹페이 영역1</h2>
+			</header>
+
+			<p>수기로 작성하던 연구노트에 대한 작성과 보관 심지어 검색까지 가능해지며 연구원들이 쾌재를 부르고 있다.
+
+				(주)코마스가 개발한 전자연구노트시스템(Solme e-Note System)은 연구개발정보가 기록된 전자문서가 전자
+				연구노트로써의 요건을 갖추고 증거력을 갖추기 위해 서면으로 작성된 연구노트와 각종 Word Process로 작성된
+				연구노트를 보관하고 관리할 수 있도록 지원한다. 도트(Dot) 패턴이 인쇄된 서면 연구노트에 디지털펜(ADP-601)으로
+				연구노트를 작성하면 작성된 내용이 그대로 PC 화면에 나타나며 실험실 등에서 연구노트를 작성하는 경우에는 디지털펜에 내장된
+				메모리 자체에 작성한 내용이 저장되는 기술이 적용되어 있다. 연구노트의 위·변조에도 걱정이 없다.
+				타임스탬프(TimeStamp) 기능을 탑재 돼 작성시점을 인증하고 진본 여부를 확인할 수 있으며 한국지식재산전략원
+				인증시스템과 금융결제원 인증시스템에 연계돼 있기 때문이다. 또한 워크플로우 기능이 내장 돼 있어 연구자가 연구노트를
+				작성·등록하면 점검자 또는 연구책임자가 해당 기록을 점검할 수 있도록 자동 처리되며 이는 연구노트의 증거력을 높이는데
+				기여한다. 서면연구노트는 그대로 디지털화 되며 텍스트 편집 및 이미지 편집도 손쉽다. 전자문서로 관리된다는 점은 연구노트의
+				재활용성을 극대화시키고 대용량 저장이 가능하기 때문에 일반적으로 양이 많은 연구노트 관리에도 효율적이다. 특히 디지털화
+				되어 연구노트가 관리될 경우 검색도 용이해진다는 점도 Solme e-Note System이 가진 장점이라고 할 수 있다.
+
+				연구노트는 과제 수행이 많은 대학교나 공공연구기관, 민간기업연구소 등에서 유용하게 사용될 것으로 기대된다. 이러한 우수성을
+				인정받아 전자연구노트시스템(Solme e-Note System)을 개발한 ㈜코마스는 IBM 파트너월드에서 2014
+				비콘어워드와 2014 초이스 어워드 두 개 부문을 동시 수상했으며 2012 대한민국 대표 우수기업 인증을 받으며 기술력을
+				뽐내고 있다.</p>
+			<section>
+				<header>
+					<h2>여기는 웹페이 영역1</h2>
+				</header>
+			</section>
+		</article>
+	</div>
+</body>
+</html>

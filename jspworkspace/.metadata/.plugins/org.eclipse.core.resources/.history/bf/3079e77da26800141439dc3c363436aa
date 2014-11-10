@@ -1,0 +1,77 @@
+package action;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import vo.BoardVO;
+import vo.PageVO;
+import control.ActionForward;
+import dao.BoardDao;
+
+public class BoardListModel implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+		// 페이지 설정을 위한 객체를 생성
+		PageVO pageInfo = new PageVO();
+		// 한 페이지에 보여줄 라인 수
+		int rowsPerPage = 5;
+		// 한페이지에 보여줄 페이지블록 수
+		int pagesPerBlock = 5;
+		// 페이지 값 - 1, 2, 3, ...
+		int currentPage = Integer.parseInt(request.getParameter("page"));
+		// 항상 0으로 초기화
+		int currentBlock= 0;
+		// 페이지 값에 따라서 페이지 블록을 연산
+		if(currentPage % pagesPerBlock == 0) {
+			currentBlock = currentPage / pagesPerBlock;
+		} else {
+			currentBlock = currentPage / pagesPerBlock +1;
+		}
+		// 현재페이지 값에 따른 startRow (Sql문에서 between절에 들어갈 값)
+		// 첫번째 Row는 무조건 0 (1부터), 2페이지일때는 6부터
+		int startRow = (currentPage-1) * rowsPerPage +1;
+		// 1* 5 = 5까지, 2 * 5 = 10까지
+		int endRow = currentPage * rowsPerPage;
+		// 전체 데이터 값 얻기
+		int totalRows = BoardDao.getDao().getTotalCount();
+		int totalPages = 0;
+		// 전체블록 구하기
+		if(totalRows % totalPages == 0) {
+			totalPages = totalRows / rowsPerPage;
+		} else { 
+			totalPages = totalRows / rowsPerPage +1;
+		}
+		// 전체 블록값 구하기
+		int totalBlocks = 0;
+		if(totalPages % pagesPerBlock == 0) {
+			totalBlocks = totalPages / pagesPerBlock;
+		} else {
+			totalBlocks = totalPages / pagesPerBlock + 1;
+		}
+		pageInfo.setCurrentPage(currentPage);
+		pageInfo.setCurrentBlock(currentBlock);
+		pageInfo.setRowsPerPage(rowsPerPage);
+		pageInfo.setPagesPerBlock(pagesPerBlock);
+		pageInfo.setStartRow(startRow);
+		pageInfo.setEndRow(endRow);
+		pageInfo.setTotalRows(totalRows);
+		pageInfo.setTotalPages(totalPages);
+		pageInfo.setTotalBlocks(totalBlocks);
+		
+		request.setAttribute("pageInfo", pageInfo);
+		HashMap<String, Integer> map = new HashMap<>();
+		map.put("begin", startRow);
+		map.put("end", endRow);
+		List<BoardVO> list = BoardDao.getDao().getList(map);
+		request.setAttribute("list", list);
+		return new ActionForward("studyboardList.jsp", false);
+	}
+
+}

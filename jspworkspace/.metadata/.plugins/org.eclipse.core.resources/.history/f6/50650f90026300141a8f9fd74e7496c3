@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!--data-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>TODO supply a title</title>
+<meta charset="EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+progress {
+	display: none;
+}
+</style>
+</head>
+<script>
+	$(document).ready(function() {
+
+	});
+</script>
+<body>
+	<h1>XMLHTTPREQUEST level2를 이용한 파일 업로드</h1>
+	<input type="file">
+	<button>upload</button>
+	<progress>0%</progress>
+	<div></div>
+</body>
+</html>

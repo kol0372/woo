@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="bbs">
+	<insert id="bbs_in" parameterType="bvo">
+		insert into doogongi
+		values(doogongi_seq.nextVal,#{id},#{pass},
+		#{email},#{tel},sysdate)
+	</insert>
+<!-- 	<select id="totalcount" resultType="int"> -->
+<!-- 		select count(*) from doogongi -->
+<!-- 	</select> -->
+<!-- 	<select id="bbs_list" resultType="bvo"> -->
+<!-- 		select num, sub, writer, hit, -->
+<!-- 		to_char(redate,'yyyy-mm-dd') redate -->
+<!-- 		from doogongi order by 1 asc -->
+<!-- 	</select> -->
+
+<!-- 	<select id="bbs_detail" resultType="bvo" parameterType="int"> -->
+<!-- 		select * -->
+<!-- 		from doogongi where num =#{num} -->
+<!-- 	</select> -->
+
+<!-- 	<update id="bbs_hit" parameterType="int"> -->
+<!-- 		update doogongi set hit = hit +1 -->
+<!-- 		where num=#{num} -->
+<!-- 	</update> -->
+
+<!-- 	<delete id="bbs_delete" parameterType="int"> -->
+<!-- 		delete from doogongi where num -->
+<!-- 		=#{num} -->
+<!-- 	</delete> -->
+<!-- 	<update id="bbs_update" parameterType="bvo"> -->
+<!-- 		update doogongi set sub=#{sub}, cont=#{cont} where num=#{num} -->
+<!-- 	</update> -->
+</mapper>
+

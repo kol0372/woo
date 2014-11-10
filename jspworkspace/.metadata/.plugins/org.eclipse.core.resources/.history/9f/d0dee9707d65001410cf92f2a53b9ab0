@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<style>#logo{width: 310px; height: 70px;text-indent: -999; background-image: url('img/');
+background-repeat: no-repeat; margin-top: 5px; margin-left: auto; margin-right: auto; margin-bottom: 5px;}</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="cordova.js" charset="euc-kr"></script>
+
+<script>
+	$(document).ready(function() {
+
+	});
+</script>
+</head>
+<body>
+	<div data-role="page" data-theme="b" id="main">
+		<div data-role="header">
+			<h1 id="logo">kosta86기 파견 기자 뉴스</h1>
+
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li><a href=""> <img src="img/ad.png">
+						<h3>몽골:징기스칸</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+				<li><a href=""> <img src="img/ae.png">
+						<h3>중국</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+				<li><a href=""> <img src="img/af.png">
+						<h3>일본</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+				<li><a href=""> <img src="img/ag.png">
+						<h3>우즈백</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+				<li><a href=""> <img src="img/al.png">
+						<h3>인도</h3>
+						<p>징징징징징기스칸</p>
+				</a></li>
+			</ul>
+		</div>
+		<div data-role="footer">
+			<h3></h3>
+		</div>
+	</div>
+</body>
+</html>

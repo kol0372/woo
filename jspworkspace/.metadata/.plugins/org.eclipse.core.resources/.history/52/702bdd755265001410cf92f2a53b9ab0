@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!--data-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<script>
+	$(document).ready(function() {
+		$('#btn1').click(function() {
+			var userAgent = navigator.userAgent;
+			console.log("Client Device:" + userAgent);
+			alert(userAgent);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="Click" id="btn1">
+</body>
+</html>

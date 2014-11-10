@@ -1,0 +1,41 @@
+<%-- 
+    Document   : ex2_load
+    Created on : 2014. 10. 25, 오후 12:09:23
+    Author     : kosta
+--%>
+
+<%@page contentType="text/html" pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+        <title>JSP Page</title>
+        <style>
+            .wrap{width:300px; margin:auto; background:pink}
+            
+        </style>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+       
+        <script>
+            $(document).ready (function()
+            {
+                $('.w').css({width:'300px', margin:'auto'});
+                $('#btn').click(function(){
+                     $('#cont').addClass('wrap');
+                    //load함수를 사용해서 ex2_loadTest.jsp를 가져옴
+                    $('#cont').load('ex2_loadTest.jsp p');
+                });
+                $('#btn1').click(function(){
+                    $('#cont').addClass('wrap');
+                    $('#cont').load('ex2_loadTest.jsp p,span');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="w"><input type="button" value="PLoad" id="btn"></div><br>
+        <div class="w"><input type="button" value="PSPanLoad" id="btn1"></div>
+        <div id="cont"></div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import vo.PageVO;
+import control.ActionForward;
+import dao.BoardDao;
+
+public class BoardListModel implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest req,
+			HttpServletResponse resp) throws IOException {
+
+		PageVO pageInfo = new PageVO();
+		int rowsPerPage = 5;
+		int pagesPerBlock = 5;
+		int cuttentPage = Integer.parseInt(req.getParameter("page"));
+		int currentBlock = 0;
+		if (cuttentPage % pagesPerBlock == 0) {
+			currentBlock = cuttentPage / pagesPerBlock;
+
+		} else {
+			currentBlock = cuttentPage / pagesPerBlock + 1;
+		}
+		int startRow = (cuttentPage - 1) * rowsPerPage + 1;
+		int endRow = cuttentPage * rowsPerPage;
+		int totalRows = BoardDao.getDao().getTotalCount();
+		int totalPages = 0;
+		if (totalRows % rowsPerPage == 0) {
+			totalPages = totalRows / rowsPerPage;
+		} else {
+			totalPages = totalPages / rowsPerPage + 1;
+		}
+		return null;
+	}
+
+}

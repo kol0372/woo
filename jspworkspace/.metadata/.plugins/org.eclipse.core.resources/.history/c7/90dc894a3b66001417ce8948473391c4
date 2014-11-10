@@ -1,0 +1,19 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import control.ActionForward;
+
+public class ValueModel implements Action{
+
+	@Override
+	public ActionForward execute(HttpServletRequest req,
+			HttpServletResponse resp) throws IOException {
+		String v = req.getParameter("val");
+		return null;
+	}
+
+}

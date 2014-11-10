@@ -1,0 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<jsp:useBean id="vo" class="vo.MjoinVO"></jsp:useBean>
+<jsp:setProperty property="id" name="vo" param="id"/>

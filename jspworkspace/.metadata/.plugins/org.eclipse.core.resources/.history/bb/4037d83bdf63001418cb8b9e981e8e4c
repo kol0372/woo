@@ -1,0 +1,19 @@
+<%@page import="dao.JoinDao"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%
+	request.setCharacterEncoding("euc-kr");
+%>
+<jsp:useBean id="vo" class="vo.MjoinVO"></jsp:useBean>
+<<jsp:setProperty property="*" name="vo" />
+
+<%-- <jsp:setProperty property="id" name="vo" param="id" /> --%>
+<%-- <jsp:setProperty property="pwd" name="vo" param="pwd" /> --%>
+<%-- <jsp:setProperty property="name" name="vo" param="name" /> --%>
+<%-- <jsp:setProperty property="info" name="vo" param="info" /> --%>
+<%
+	//dao에 addJoin메서드를 호출할 때 저장된 Vo의 주소를 인자로 전달
+	JoinDao.getDao().addJoin(vo);
+	response.sendRedirect("welcome.jsp");
+%>
+
