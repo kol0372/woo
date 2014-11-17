@@ -1,0 +1,21 @@
+package ex5_lifecycle2;
+
+public class ServiceImple2 {
+	private String msg;
+
+	public ServiceImple2() {
+		System.out.println("생성자 호출");
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		System.out.println("DI호출 : msg");
+		this.msg = msg;
+	}
+
+
+
+}

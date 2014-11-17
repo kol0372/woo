@@ -1,6 +1,6 @@
 <%@page import="vo.BbsVO"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.BbsDao"%>
+<%@page import="dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ include file="ex1_top.jsp"%>
@@ -19,7 +19,7 @@
 		<p>
 			<%
 				int num = Integer.parseInt(request.getParameter("num"));
-				BbsVO e = BbsDao.getDao().delete(num);
+					BbsVO e = BoardDao.getDao().delete(num);
 			%>
 			게시글이 삭제되었습니다. <br /> <a href="bbsForm.jsp">새로운 글쓰기</a>
 		</p>

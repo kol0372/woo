@@ -1,0 +1,13 @@
+package spring113;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AutoWiredService {
+	@Autowired
+	private String name;
+
+	public String printName() {
+		StringBuffer s = new StringBuffer();
+		return s.append("당신의 이름은").append(name).append("입니다.").toString();
+	}
+}

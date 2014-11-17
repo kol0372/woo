@@ -1,6 +1,7 @@
+<%@page import="dao.BbsDao"%>
 <%@page import="vo.BbsVO"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.BbsDao"%>
+<%@page import="dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ include file="ex1_top.jsp"%>
@@ -39,8 +40,9 @@
 			</tfoot>
 			<tbody>
 			<!-- 반복영역 -->
-			<% List<BbsVO> list = BbsDao.getDao().getList();
-			for(BbsVO e: list) {
+			<%
+				List<BbsVO> list = BbsDao.getDao().getList();
+				for(BbsVO e: list) {
 			%>
 				<tr style="background: #00ff">
 					<td><%=e.getNum() %></td>

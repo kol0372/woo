@@ -1,0 +1,9 @@
+package vo;
+
+public class elVO {
+	
+	private String name, email;
+	
+	private int phone;
+
+}

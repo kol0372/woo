@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/ex1_dbid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" 
+        android:hint="아이디 입력">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/ex_dbpsw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="비밀번호 입력" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/ex1_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ipruck" />
+
+        <Button
+            android:id="@+id/ex1_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="list" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,94 @@
+package kr.or.kosta.and1008;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class Exam2 extends Activity implements OnClickListener {
+	
+	private Button btn1,btn2,btn3;
+	private TextView total, user, cpu, win, result ;
+	private int tot = 1;
+    private int wi = 0;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.exam2);
+		
+		btn1 = (Button)(findViewById(R.id.exambtn1));
+		btn2 = (Button)(findViewById(R.id.exambtn2));
+		btn3 = (Button)(findViewById(R.id.exambtn3));
+		
+		total = (TextView) findViewById(R.id.t);
+		user = (TextView) findViewById(R.id.u);
+		cpu = (TextView) findViewById(R.id.c);
+		win = (TextView) findViewById(R.id.w);
+		result = (TextView) findViewById(R.id.result);
+		
+		btn1.setOnClickListener(this);
+		btn2.setOnClickListener(this);
+		btn3.setOnClickListener(this);
+		
+		
+		
+		
+	}
+
+	@Override
+	public void onClick(View v) {
+		if(v == btn1){
+			  String cpuv = cpuvalue();
+		        user.setText("Ȧ");
+		        
+		        total.setText(String.valueOf(tot++));
+		        cpu.setText(cpuvalue());
+		        win.setText(String.valueOf(wincnt(cpuv, "Ȧ")));
+		        result.setText(compare(cpuv, "Ȧ"));
+			
+		}else if(v == btn2){
+			   String cpuv = cpuvalue();
+		        user.setText("¦");
+		        total.setText(String.valueOf(tot++));
+		        cpu.setText(cpuvalue());
+		        win.setText(String.valueOf(wincnt(cpuv, "¦")));
+		        result.setText(compare(cpuv, "¦"));
+			
+		}else if(v == btn3){
+			System.exit(0);
+		}
+		
+	}
+	
+    public String cpuvalue(){
+        int num = (int) (Math.random()*2)+1;
+        if(num == 1){
+            return "Ȧ";
+        }else{
+            return "¦";
+    }
+    }
+    
+    public int wincnt(String cpu, String user){
+        if(cpu.equals(user)){
+            return ++wi;
+        }else{
+            return wi;
+        }
+    }
+
+public String compare(String cpu, String user){
+        if(cpu.equals(user)){
+            return "�̱�";
+        }else{
+            return "��";
+        }
+}
+	
+
+}

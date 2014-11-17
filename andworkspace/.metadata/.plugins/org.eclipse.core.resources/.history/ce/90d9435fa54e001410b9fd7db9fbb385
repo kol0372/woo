@@ -1,0 +1,47 @@
+package kr.or.kosta.and1008;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class ExamJava extends Activity implements OnClickListener {
+	
+	private Button btn1,btn2,btn3;
+	private View vi;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.exam1);
+		
+		btn1 = (Button)(findViewById(R.id.exambtn1));
+		btn2 = (Button)(findViewById(R.id.exambtn2));
+		btn3 = (Button)(findViewById(R.id.exambtn3));
+		vi = findViewById(R.id.Woori);
+		
+		btn1.setOnClickListener(this);
+		btn2.setOnClickListener(this);
+		btn3.setOnClickListener(this);
+	}
+
+
+	@Override
+	public void onClick(View v) {
+		if( v == btn1){
+			vi.setBackgroundColor(Color.WHITE);
+			
+		}else if(v == btn2){
+			vi.setBackgroundColor(Color.CYAN);
+			
+		}else if( v== btn3){
+			vi.setBackgroundColor(Color.MAGENTA);
+		}
+		
+	}
+
+}

@@ -1,4 +1,4 @@
-<%@page import="dao.BbsDao"%>
+
 <%@page import="vo.BbsVO"%>
 <%@page import="dao.JoinDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -20,7 +20,7 @@
 			.ready(
 					function() {
 <%//dao에 addJoin메서드를 호출할 때 저장된 Vo의 주소를 인자로 전달
-			boolean res = BbsDao.getDao().bbsAdd(vo);
+			boolean res = JoinDao.getDao().addJoin(vo);
 if (res){
 %>
 	//jquery 여기에

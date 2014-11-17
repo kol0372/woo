@@ -7,11 +7,9 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="conn.ConnUtil"/>
 <fullyQualifiedTypeName name="vo.ImgDirVo"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="vo.MjoinVO"/>
 <fullyQualifiedTypeName name="com.sun.javafx.collections.MappingChange.Map"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.io.Reader"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="javax.annotation.Resources"/>
@@ -32,8 +30,23 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="control.ActionFactory"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-<fullyQualifiedTypeName name="action.Action"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="control.ActionForward"/>
 <fullyQualifiedTypeName name="action.ValueModel"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="action.BoardForm"/>
+<fullyQualifiedTypeName name="action.BoardAdd"/>
+<fullyQualifiedTypeName name="vo.BoardVO"/>
+<fullyQualifiedTypeName name="vo.PageVO"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="dao.BoardDao"/>
+<fullyQualifiedTypeName name="vo.elVO"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="action.ElModel"/>
+<fullyQualifiedTypeName name="action.Action"/>
+<fullyQualifiedTypeName name="control.ActionForward"/>
+<fullyQualifiedTypeName name="action.ElModel2"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="vo.El2VO"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

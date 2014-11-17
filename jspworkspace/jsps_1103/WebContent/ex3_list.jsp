@@ -1,4 +1,4 @@
-<%@page import="dao.ImgDirDao"%>
+<%@page import="dao.JoinDao"%>
 <%@page import="vo.ImgDriVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
@@ -10,10 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% 
+	<%
 		//Dao로 부터 데이터를 받아오기 위한 메서드를 호출
-		ArrayList<ImgDriVO> list = ImgDirDao.getDao().getList();
-		for(ImgDriVO e : list){
+			ArrayList<ImgDriVO> list = JoinDao.getDao().getList();
+			for(ImgDriVO e : list){
 	%>
 	<p>
 		<img src=

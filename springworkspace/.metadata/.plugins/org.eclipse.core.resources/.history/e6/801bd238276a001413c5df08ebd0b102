@@ -1,0 +1,8 @@
+package ex1;
+
+public class MemverVO {
+	
+	private String name ,id, pwd;
+	
+
+}

@@ -86,4 +86,26 @@ public int login(Map<String, String> info){
 		}
 		return cnt;
 }
+public int idchina(Map<String, String> info){
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	int cnt=0;
+		StringBuffer sql = new StringBuffer();
+		sql.append("select count(*) cnt from mjoin where id=?");
+		try {
+			con = ConnUtil.getDs();
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, info.get("id"));
+			rs = pstmt.executeQuery();
+			  if (rs.next()) {
+		             cnt=1;
+		        }
+			rs.close();
+			pstmt.close();
+			con.close();		
+		} catch (SQLException e) {
+		}
+		return cnt;
+}
 }

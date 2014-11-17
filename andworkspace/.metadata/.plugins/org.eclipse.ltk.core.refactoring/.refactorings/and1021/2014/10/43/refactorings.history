@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;kr.or.and1021.PlaceMapFragment&apos; to &apos;MapTest&apos;&#x0D;&#x0A;- Original project: &apos;and1021&apos;&#x0D;&#x0A;- Original element: &apos;kr.or.and1021.PlaceMapFragment&apos;&#x0D;&#x0A;- Renamed element: &apos;kr.or.and1021.MapTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;PlaceMapFragment&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;kr.or.and1021{PlaceMapFragment.java[PlaceMapFragment" matchStrategy="1" name="MapTest" qualified="false" references="true" similarDeclarations="false" stamp="1413856806510" textual="false" version="1.0"/>
+</session>

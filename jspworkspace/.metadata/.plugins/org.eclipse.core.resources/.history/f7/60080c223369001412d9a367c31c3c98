@@ -1,0 +1,32 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import vo.BoardVO;
+import vo.elVO;
+import control.ActionForward;
+import dao.BoardDao;
+
+public class ElModel implements Action{
+
+	@Override
+	public ActionForward execute(HttpServletRequest req,
+			HttpServletResponse resp) throws IOException {
+		// TODO Auto-generated method stub		return null;
+		
+		elVO v = new elVO();
+		v.setName("ȫ�浿");
+		v.setEmail("kol@naver.com");
+		v.setPhone("01056220372");
+		
+		
+		
+		
+		
+		return new ActionForward("board.kosta?query=el", true);
+	}
+
+}

@@ -1,0 +1,21 @@
+package kr.or.kosta.and1008;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class CoinGame extends Activity {
+	private Button frontBtn, backBtn, endBtn;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+
+		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.coinlayout);
+		
+		
+		frontBtn = findViewById(R.id.)
+	}
+}

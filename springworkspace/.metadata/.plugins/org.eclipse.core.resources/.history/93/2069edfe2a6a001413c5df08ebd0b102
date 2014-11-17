@@ -1,0 +1,6 @@
+package ex3;
+
+public class Snippet {
+	<prop key="admin_email">kol7456@naver.com</prop>
+}
+

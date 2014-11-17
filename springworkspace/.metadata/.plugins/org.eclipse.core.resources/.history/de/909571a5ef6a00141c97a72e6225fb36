@@ -1,0 +1,31 @@
+package ex4_lifecycle;
+
+public class ServiceImple implements Service {
+	private String msg;
+	
+
+	public ServiceImple() {
+		System.out.println("생성자 호출");
+	}
+	
+	
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+
+
+	@Override
+	public void init() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

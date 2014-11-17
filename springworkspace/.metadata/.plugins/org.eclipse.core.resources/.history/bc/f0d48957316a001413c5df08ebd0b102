@@ -1,0 +1,15 @@
+package ex4;
+
+import java.util.Set;
+
+public class setType {
+	
+	private Set<Integer> set;
+
+	public void setSet(Set<Integer> set) {
+		this.set = set;
+	}
+	
+	
+
+}

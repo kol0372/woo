@@ -1,0 +1,22 @@
+package ex1;
+
+import java.text.SimpleDateFormat;
+
+public class TodayApps {
+	private String today;
+
+	public void setToday(String today) {
+		this.today = today;
+	}
+	
+	public String printMsg() {
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("오늘날짜는 ").append(today).append("입니다.");
+		return sb.toString();
+	}
+	
+	
+	
+	
+}

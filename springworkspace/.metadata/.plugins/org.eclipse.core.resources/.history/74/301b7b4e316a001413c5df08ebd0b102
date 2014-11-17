@@ -1,0 +1,10 @@
+package ex4;
+
+import java.util.Set;
+
+public interface SetInter {
+
+//	PUBLIC SET<INTEGER> GETSET(){
+//		RETURN SET;
+//	}
+}

@@ -1,11 +1,10 @@
-<%@page import="dao.ImgDirDao"%>
+<%@page import="dao.JoinDao"%>
 <%@page import="vo.ImgDriVO"%>
 <%@page import="java.io.File"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%
-	
 	String path = application.getRealPath("/upload");
 	System.out.println(path);
 
@@ -23,10 +22,9 @@
 	v.setWriter(mr.getParameter("writer"));
 	v.setImgpath(s_file.getName());
 	// Dao를 생성
-	ImgDirDao.getDao().addImg(v);
+	JoinDao.getDao().addImg(v);
 	// 이동할 페이지 이동
 	response.sendRedirect("ex3_list.jsp");
-
 %><img src="<%=fileUrl%>"> / <%=mr.getParameter("writer") %><br />
 <img src="<%=application.getContextPath()%>/upload/unjung.jpg">
 

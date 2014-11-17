@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<bean id="int" class="java.lang.Integer">
+		<constructor-arg value="150000">
+		</constructor-arg>
+	</bean>
+
+	<bean id="maMap" class="ex1.Ex2_Map">
+		<property name="maps">
+			<map>
+				<entry key="서울" value="50000"></entry>
+				<entry key="부산" value="int"></entry>
+				<entry key="광주" value="150000"></entry>
+
+			</map>
+		</property>
+	</bean>
+</beans>

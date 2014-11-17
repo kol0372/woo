@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" action="orderProsess.jsp" id="f"
+            enctype="multipart/form-data">
+
+		이름 :<input type="text" name="name"> 살것:<input type="text"
+			name="ordername"> 수량 <input type="text" name="quant">가격
+		<input type="text" name="price"> 
+		<input type="button"
+			value="send" onclick="location">
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+package ex4_lifecycle;
+
+public interface Service {
+
+}

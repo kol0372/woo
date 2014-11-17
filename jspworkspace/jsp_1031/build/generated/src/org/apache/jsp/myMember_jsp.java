@@ -95,15 +95,15 @@ public final class myMember_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body> \n");
       out.write("        <table>\n");
       out.write("            <tr>\n");
-      out.write("            <td>넘버</td>\n");
-      out.write("         <td>아이디</td>\n");
-      out.write("         <td>비번</td>\n");
-      out.write("         <td>이름</td>\n");
-      out.write("         <td>나이</td>\n");
-      out.write("         <td>이메일</td>\n");
-      out.write("         <td>취미</td>\n");
-      out.write("         <td>날짜</td>\n");
-      out.write("         </tr>\n");
+      out.write("                <td>넘버</td>\n");
+      out.write("                <td>아이디</td>\n");
+      out.write("                <td>비번</td>\n");
+      out.write("                <td>이름</td>\n");
+      out.write("                <td>나이</td>\n");
+      out.write("                <td>이메일</td>\n");
+      out.write("                <td>취미</td>\n");
+      out.write("                <td>날짜</td>\n");
+      out.write("            </tr>\n");
       out.write("            ");
    while (rs.next()) {
                     mymrmberno = rs.getString("mymrmberno");

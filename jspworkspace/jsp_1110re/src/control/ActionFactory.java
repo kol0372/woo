@@ -5,6 +5,8 @@ import action.BoardAddModel;
 import action.BoardForm;
 import action.BoardList;
 import action.BoardListModel;
+import action.ElModel;
+import action.ElModel2;
 import action.IndexModel;
 
 
@@ -31,6 +33,10 @@ public class ActionFactory {
 			action = new BoardForm();
 		}else if(query.equals("boardAdd")){
 			action = new BoardAddModel();
+		}else if(query.equals("el")){
+			action = new ElModel();
+		}else if(query.equals("el2")){
+			action = new ElModel2();
 		}
 		return action;
 	}

@@ -1,0 +1,17 @@
+package ex3;
+
+import java.util.Map;
+
+public class Ex2_Map {
+
+	private Map<String, Integer> maps;
+
+	public Map<String, Integer> getMaps() {
+		return maps;
+	}
+
+	public void setMaps(Map<String, Integer> maps) {
+		this.maps = maps;
+	}
+
+}

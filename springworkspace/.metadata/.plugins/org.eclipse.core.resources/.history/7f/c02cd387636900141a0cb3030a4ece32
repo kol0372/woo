@@ -1,0 +1,13 @@
+package ex1;
+
+public class Ex1_MessageApp {
+	private String today;
+
+	public void setToday(String today) {
+		this.today = today;
+	}
+
+
+
+
+}

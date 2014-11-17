@@ -1,0 +1,36 @@
+package ex1;
+
+public class Ex2ServiceImple implements Service {
+
+	private int num;
+	private String name, str;
+
+	public Ex2ServiceImple(int num) {
+		super();
+		this.num = num;
+	}
+
+	public Ex2ServiceImple(String str) {
+		super();
+		this.str = str;
+	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void call() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void moniter() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

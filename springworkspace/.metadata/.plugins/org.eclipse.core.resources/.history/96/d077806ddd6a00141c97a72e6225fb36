@@ -1,0 +1,12 @@
+package ex2Resource;
+
+import javax.annotation.Resource;
+
+public class Ex2_Resource {
+	@Resource
+	private String msg;
+
+	public String printMsg() {
+		return "¡Ú" + msg + "¡Ú";
+	}
+}

@@ -1,0 +1,21 @@
+package order;
+
+public class OrderSystem {
+
+	private YourOrder menu;
+
+	public String printMenu(YourOrder menu) {
+		String re = "";
+		return re;
+	}
+
+	public YourOrder getMenu() {
+		return menu;
+	}
+
+	public void setMenu(YourOrder menu) {
+		this.menu = menu;
+	};
+	
+	
+}

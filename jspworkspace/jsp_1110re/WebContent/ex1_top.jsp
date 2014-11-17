@@ -42,8 +42,8 @@
 					<% } %>
 					<li><a href="bbslist.jsp">게시판</a>&nbsp; |</li>
 					<li><a href="board.kosta?query=boardList&page=1">Model2게시판</a>&nbsp; |</li>
-					<li><a href="">메뉴1</a>&nbsp; |</li>
-					<li><a href="">메뉴1</a></li>
+					<li><a href="board.kosta?query=el">메뉴1</a>&nbsp; |</li>
+					<li><a href="board.kosta?query=el2">el2</a></li>
 				</ul>
 			</nav>
 			

@@ -1,0 +1,13 @@
+package order;
+
+public class OrderSystem {
+
+	private MenuInter menu;
+
+//auto로 구현
+	
+	
+	public String printMenu(YourOrder vo) {
+		return vo.getName() + "님이<br/>" + menu.order(vo);
+	}
+}

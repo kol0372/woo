@@ -1,0 +1,13 @@
+package order;
+
+public class OrderSystem {
+
+	private MenuInter menu;
+
+	public String printMenu(YourOrder vo) {
+		return vo.getName()+"´ÔÀÌ"+menu.order(vo);
+	}
+
+
+
+}

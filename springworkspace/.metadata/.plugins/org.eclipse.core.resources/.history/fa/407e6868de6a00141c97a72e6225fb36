@@ -1,0 +1,12 @@
+package ex3_required;
+
+public class Ex3_required {
+	
+	private String name, msg;
+	
+	public void print(){
+		System.out.println("Name: " + name);
+		System.out.println("msg: " + msg);
+	}
+
+}

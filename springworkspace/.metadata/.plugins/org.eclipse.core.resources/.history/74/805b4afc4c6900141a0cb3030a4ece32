@@ -1,0 +1,11 @@
+package ex1;
+
+public class Ex1_MessageApp {
+	private String msg;
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	
+	
+}

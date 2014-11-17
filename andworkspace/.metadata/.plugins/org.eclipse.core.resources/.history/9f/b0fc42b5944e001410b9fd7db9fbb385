@@ -1,0 +1,21 @@
+package kr.or.kosta.and1008;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class ExamJava extends Activity {
+	
+	private Button btn1,btn2,btn3;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.exam1);
+		
+		btn1 = (Button)(findViewById(R.id.))
+	}
+
+}

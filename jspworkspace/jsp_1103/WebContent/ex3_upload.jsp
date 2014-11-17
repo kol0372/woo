@@ -1,4 +1,5 @@
-<%@page import="dao.JoinDao"%>
+<%@page import="dao.ImgDirDao"%>
+
 <%@page import="vo.ImgDirVo"%>
 <%@page import="java.io.File"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
@@ -28,7 +29,7 @@
 	v.setWriter(mr.getParameter("writer"));
 	v.setImgpath(s_file.getName());
 	//DAO생성
-	JoinDao.getDao().addImg(v);
+	ImgDirDao.getDao().addImg(v);
 	//이동할 페이지 이동
 	response.sendRedirect("ex3_list.jsp");
 %><img src="<%=fileUrl%>">

@@ -1,0 +1,9 @@
+package ex1;
+
+public interface Service {
+	
+	public void print();
+	public void call();
+	public void moniter();
+
+}

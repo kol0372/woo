@@ -1,0 +1,25 @@
+package action;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import vo.El2VO;
+import control.ActionForward;
+
+public class ElModel2 implements Action{
+
+	@Override
+	public ActionForward execute(HttpServletRequest req,
+			HttpServletResponse resp) throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList singerList = new ArrayList();
+		El2VO vo= new El2VO();
+		singerList.add(vo.setName("±è¿ì¸®"));
+		
+		return new ActionForward("el2.jsp", false);
+	}
+
+}

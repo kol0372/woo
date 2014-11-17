@@ -1,6 +1,7 @@
+<%@page import="dao.BbsDao"%>
 <%@page import="vo.BbsVO"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.BbsDao"%>
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ include file="ex1_top.jsp"%>
@@ -31,7 +32,6 @@
 
 			<%
 				BbsDao.getDao().update(vo);
-				
 			%>
 			게시글수정완료
 		</p>

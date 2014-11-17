@@ -1,0 +1,20 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import control.ActionForward;
+
+public class ElModel implements Action{
+
+	@Override
+	public ActionForward execute(HttpServletRequest req,
+			HttpServletResponse resp) throws IOException {
+		// TODO Auto-generated method stub		return null;
+		
+		return new ActionForward("board.kosta?query=boardList", true);
+	}
+
+}

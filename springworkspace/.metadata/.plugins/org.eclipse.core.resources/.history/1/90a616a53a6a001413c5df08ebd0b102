@@ -1,0 +1,6 @@
+package order;
+
+public class OrderVO {
+
+	private name, ordName, quant, price;
+}

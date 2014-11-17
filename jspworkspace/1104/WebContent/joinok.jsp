@@ -7,7 +7,7 @@
 	request.setCharacterEncoding("euc-kr");
 %>
 <jsp:useBean id="vo" class="vo.MjoinVO"></jsp:useBean>
-<<jsp:setProperty property="*" name="vo" />
+<jsp:setProperty property="*" name="vo" />
 
 <%-- <jsp:setProperty property="id" name="vo" param="id" /> --%>
 <%-- <jsp:setProperty property="pwd" name="vo" param="pwd" /> --%>

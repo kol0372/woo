@@ -1,0 +1,13 @@
+package order;
+
+public class MyOrder implements MenuInter{
+
+	@Override
+	public String order(OrderVO vo) {
+		StringBuffer s = new StringBuffer();
+		s.append("<li>주문하신제품은").append(vo.getOrdName()).append("입니다.</li>");
+		
+	}
+	
+
+}

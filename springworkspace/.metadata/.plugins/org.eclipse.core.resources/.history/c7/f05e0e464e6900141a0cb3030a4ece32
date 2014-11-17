@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	<!-- beans안에 스프링컨테이너에서 관리할 DI대상 및 DI받을 객체들을 bean Element안에 정의한다. -->
+
+	<bean id="str" class="java.lang.String">
+		<constructor-arg value="나의첫번째 Spring" />
+	</bean>
+	<!-- 위에꺼 = String str= new String("나의첫번째 Spring") -->
+	<bean id="msg" class="ex1.Ex1_MessageApp"></bean>
+</beans>

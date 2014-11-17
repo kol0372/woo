@@ -1,0 +1,12 @@
+package ex1;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class MessageUse {
+	public static void main(String[] args) {
+		// xml을 읽어 와야 하는데...
+		Resource resource = new ClassPathResource("ex1/ex1_msg.xml");
+
+	}
+}

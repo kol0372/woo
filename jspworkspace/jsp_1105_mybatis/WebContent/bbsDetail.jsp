@@ -1,6 +1,6 @@
 <%@page import="vo.BbsVO"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.BbsDao"%>
+<%@page import="dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ include file="ex1_top.jsp"%>
@@ -34,8 +34,8 @@
 				<!-- 반복영역 -->
 				<%
 					int num = Integer.parseInt(request.getParameter("num"));
-				
-					BbsVO e = BbsDao.getDao().detail(num);
+						
+							BbsVO e = BoardDao.getDao().detail(num);
 				%>
 				<tr style="background: #00ff">
 					<td><%=e.getNum()%></td>

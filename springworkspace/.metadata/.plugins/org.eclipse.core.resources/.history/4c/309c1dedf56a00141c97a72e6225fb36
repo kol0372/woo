@@ -1,0 +1,15 @@
+package order;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+public class OrderSystem {
+	@Autowired
+	private MenuInter menu;
+
+	// auto로 구현
+
+	public String printMenu(YourOrder vo) {
+		return vo.getName() + "님이<br/>" + menu.order(vo);
+	}
+}

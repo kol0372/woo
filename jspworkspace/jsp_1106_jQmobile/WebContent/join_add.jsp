@@ -1,4 +1,4 @@
-<%@page import="dao.BbsDao"%>
+<%@page import="dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!--data-->
@@ -18,10 +18,8 @@
 
 <script>
 	$(document).ready(function() {
-		<%
-		BbsDao.getDao().bbsAdd(vo);
-		//response.sendRedirect("join_add.jsp");
-		%>
+		<%BoardDao.getDao().bbsAdd(vo);
+		//response.sendRedirect("join_add.jsp");%>
 		
 	});
 </script>

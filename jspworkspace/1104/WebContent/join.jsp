@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ include file="ex1_top.jsp"%>
+<script>
+$('#btn1').click(function(){
+	int cnt= JoinDao.getDao().idchina();
+});
+</script>
 <article>
 
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	<!-- beans안에 스프링컨테이너에서 관리할 DI대상 및 DI받을 객체들을 bean Element안에 정의한다. 싱글톤 레지스터리에 
+		등록후 모든 빈을 싱글톤으로 관리한다. -->
+
+	<bean id="st" class="ex1/Ex2_Singletone">
+		<property name="msg" value="Singleton"></property>
+	</bean>
+
+
+</beans>
