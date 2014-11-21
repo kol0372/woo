@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+	<context:annotation-config/>
+	<!--DataSource -JNDI -->
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/myora" />
+	</bean>
+	<!-- JdbcTemplate -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="vo" class="vo.PlaymeVO"/>
+	<!-- Dao -->
+	<bean id="jdbcDao" class="dao.PlaymeDao"/>
+	<bean id="form" class="action.ActionForm" p:method="false" p:url="/WEB-INF/playform.jsp"/>
+	<bean id="add" class="action.ActionAdd" p:method="false" p:url="/WEB-INF/playList.jsp"/>
+	<bean id="list" class="action.ActionList" p:method="false" p:url="/WEB-INF/playList.jsp"/>
+	<bean id="detail" class="action.ActionDetail" p:method="false" p:url="/WEB-INF/playDetail.jsp"/>
+</beans>

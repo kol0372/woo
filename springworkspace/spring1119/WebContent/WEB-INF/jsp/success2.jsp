@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li>${tvo.sub}</li>
+		<li>${tvo.writer}</li>
+		<li>${tvo.content}</li>
+		<li>${tvo.pwd}</li>
+
+		<li><img src="${pageContext.request.contextPath}/img/${imgName}"></li>
+		<li><img src="<%=application.getContextPath()%>/img/${imgName}"></li>
+	</ul>
+	<a href="upform.kosta">입력</a>
+</body>
+</html>
