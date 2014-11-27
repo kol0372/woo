@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+/**************************************************************  */
+.location-map {
+	background:#fff;
+	border:0;
+}
+.location-map .left {
+	float:none;
+	width:100%;
+}
+.location-map .right {
+	float:none;
+	width:100%;
+	border:0;
+}
+.location-map .map-print {display:none;}
+.location-map .location-info {border:0;}
+.location-map .tel-info {
+	border:0;
+	text-align:left;
+}
+/************************************************************** // */

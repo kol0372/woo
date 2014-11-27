@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Freeket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge; charset=UTF-8"/>
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- Loading Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../css/flat-ui.css" rel="stylesheet">
+	<link href="../css/river.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../images/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+  </head>
+  <body data-spy="scroll" data-target="#navbar-collapse">
+  <style>
+	  	body {
+			  min-height: auto;
+			}
+			
+			.navbar-static-top {
+			  margin-bottom: 0px;
+			}
+  	</style>
+    
+		<!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/logo/logo.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+			  <a href="/graphics/graphics_list.html" class="dropdown-toggle" data-toggle="dropdown">그래픽</a>
+			    <span class="dropdown-arrow"></span>
+              <ul class="dropdown-menu">
+                <li><a href="/graphics/graphics_list.html">최신상품</a></li>
+				<li class="divider"></li>
+                <li><a href="/graphics/graphics_list.html">아이콘</a></li>
+                <li><a href="#">일러스트레이션</a></li>
+				<li><a href="#">오브젝트 </a></li>
+                <li><a href="#">패턴</a></li>
+                <li><a href="#">제품모형</a></li>
+				<li><a href="#">3차원 렌더링</a></li>
+                <li><a href="#">텍스처</a></li>
+                <li><a href="#">웹 요소</a></li>
+				<li><a href="#">기타 </a></li>
+              </ul>
+			</li>
+            
+			<li class="dropdown">
+              <a href="/templates/templates_list.html" class="dropdown-toggle" data-toggle="dropdown">템플릿</a>
+              <span class="dropdown-arrow"></span>
+              <ul class="dropdown-menu">
+			  <li><a href="/templates/templates_list.html">최신상품</a></li>
+			  <li class="divider"></li>
+                <li><a href="/templates/templates_list.html">브로슈어</a></li>
+                <li><a href="#">명함 및 카드</a></li>
+                <li><a href="#">전단지</a></li>
+				<li><a href="#">초대장 </a></li>
+                <li><a href="#">로고 및 심볼</a></li>
+                <li><a href="#">잡지</a></li>
+				<li><a href="#">프리젠테이션 </a></li>
+                <li><a href="#">이력서</a></li>
+                <li><a href="#">문구</a></li>
+				<li><a href="#">웹사이트</a></li>
+				<li><a href="#">기타 </a></li>
+              </ul>
+            </li>
+		 	<li class="dropdown">
+              <a href="/theme/theme_list.html" class="dropdown-toggle" data-toggle="dropdown">테마</a>
+              <span class="dropdown-arrow"></span>
+              <ul class="dropdown-menu">
+			  <li><a href="/theme/theme_list.html">최신상품</a></li>
+			  <li class="divider"></li>
+                <li><a href="/theme/theme_list.html">Bootstrap</a></li>
+                <li><a href="#">Wordpress</a></li>
+                <li><a href="#">Gnuboard</a></li>
+				<li><a href="#">Youngcart5 </a></li>
+                <li><a href="#">Xpressengine</a></li>
+                <li><a href="#">KimsQ Rb</a></li>
+				<li><a href="#">Tumblr </a></li>
+                <li><a href="#">Tistory</a></li>
+                <li><a href="#">Textcube</a></li>
+				<li><a href="#">기타 </a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">글꼴</a></li>
+            <li class="dropdown">
+              <a href="/community/notice.html" class="dropdown-toggle" data-toggle="dropdown">커뮤니티</a>
+              <span class="dropdown-arrow"></span>
+              <ul class="dropdown-menu">
+                <li><a href="/community/notice.html">공지사항</a></li>
+                <li><a href="/community/call.html">요청사항</a></li>
+                <li><a href="/community/free.html">자유게시판</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">프리켓</li>
+				<li><a href="#">만난사람들</a></li>
+                <li><a href="#">블로그</a></li>
+              </ul>
+            </li>
+			<li>  <form role="search" class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" placeholder="검색" class="form-control">
+            </div>
+            <button class="btn btn-default" type="submit">검색</button>
+          </form></li>
+          </ul>
+		
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/" data-toggle="modal" data-target="#loginModal">로그인</a></li>
+            <li><a href="../navbar/" data-toggle="modal" data-target="#joinModal">가입</a></li>
+            <li><a href="../navbar-fixed-top/">도움말</a></li>
+            
+              <li><a href="#fakelink" class="fui-chat"></a></li>
+
+			  <li class="dropdown">
+              <a href="/community/notice.html" class="fui-gear" data-toggle="dropdown"></a>
+              <span class="dropdown-arrow"></span>
+              <ul class="dropdown-menu">
+			   <li><a href="#">프로필</a></li>
+                <li><a href="#">설정</a></li>
+                <li class="divider"></li>
+				<li><a href="#">구매내역</a></li>
+                <li><a href="#">예금충전</a></li>
+                <li class="divider"></li>
+                <li><a href="#">업로드</a></li>
+				<li><a href="#">나의작품</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<? include "modal.html";?>

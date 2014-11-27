@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+		<typeAliases>
+		<typeAlias type="kosta.vo.BoardCommVO" alias="bcvo" />
+		<typeAlias type="kosta.vo.Board2VO" alias="b2vo" />
+	</typeAliases>
+</configuration>

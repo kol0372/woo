@@ -1,0 +1,32 @@
+﻿*{margin:0 auto;padding:0;}
+li{list-style:none;vertical-align:top;}
+img,fieldset{border:none 0;vertical-align:top;}
+input,select,button{vertical-align:middle;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+strong,em,address{font-style:normal;font-weight:normal;}
+body,input,select,textarea,button{font-family:Nanum Gothic,"나눔고딕","lato",sans-serif;font-size:12px;font-weight:normal;}
+
+a{text-decoration:none;color:#333333;}
+a:hover,a:focus{color:#333333;text-decoration:none;}
+.hide,caption,legend,hr{position:absolute;left:-9999px;font-size:0;width:0;height:0;overflow:hidden;text-indent:-9999px;}
+
+#container {
+    width:1000px;
+}
+#header {hegiht:200px; background-color:#2a2a2a;border-bottom: 4px solid #d05b91}
+#header .top-nav {background-color:#2a2a2a;vertical-align:middle;height:50px;border-bottom: 4px solid #3b3b3b;}
+#header .top-nav {width:1000px;padding-top:25px;}
+#header .top-nav .logo li{font-family:"lato";letter-spacing: 3px;font-size:25px;color:#ffffff;float:left;font-weight:bold;}
+#header .top-nav .logo li a{color:#ffffff;}
+#header .top-nav .logo li a:hover{color:#808080;}
+#header .top-nav .menu li{font-family:"lato";padding-left:30px;font-size:15px;color:#ffffff;line-height:-25px;float:left;padding-top:7px;font-weight:bold;}
+#header .top-nav .menu li a{color:#949494;}
+#header .top-nav .menu li a:hover{color:#ffffff;}
+#header .top-nav .member li{font-family:"나눔고딕";padding-left:20px;font-size:12px;color:#ffffff;line-height:-25px;float:right;padding-top:5px;}
+#header .top-nav .member li a{color:#ffffff;}
+#header .top-nav .member li a:hover{color:#808080;}
+
+/*슬라이더*/
+#header .slider {background-color:#f2f2f2;height:345px;background-image:url('/site/img/pattern.jpg')}
+#header .slider .text {text-align:center;}
+#header .slider .text li{padding:150px;vertical-align:auto;color:#ffffff;font-size:35px;}
