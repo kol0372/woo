@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
+	<mvc:annotation-driven />
+	<context:component-scan base-package="kosta" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+
+	</bean>
+
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles/tiles-definitions.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 실험용 -->
+	<bean name="/cameraCCTV.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="cameraCCTV" />
+	</bean>
+	<bean name="/cameraRecord.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="cameraRecord" />
+	</bean>
+	<bean name="/chooldonglist.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="chooldonglist" />
+	</bean>
+	
+	<bean name="/contactEnd.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="contactEnd" />
+	</bean>
+
+	<bean name="/conupdate.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="conupdate" />
+	</bean>
+	<bean name="/gogekjungbo.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="gogekjungbo" />
+	</bean>
+
+	<bean name="/join.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="join" />
+	</bean>
+	<bean name="/login.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="login" />
+	</bean>
+	<bean name="/main.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="main" />
+	</bean>
+<!-- 	<bean name="/question.kosta" -->
+<!-- 		class="org.springframework.web.servlet.mvc.ParameterizableViewController"> -->
+<!-- 		<property name="viewName" value="question" /> -->
+<!-- 	</bean> -->
+	<bean name="/questionDetail.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="questionDetail" />
+	</bean>
+	<bean name="/questionJaju.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="questionJaju" />
+	</bean>
+	<bean name="/questionUpdate.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="questionUpdate" />
+	</bean>
+	<bean name="/request.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="request" />
+	</bean>
+	<bean name="/requestUpdate.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="requestUpdate" />
+	</bean>
+	<bean name="/sc_update.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="sc_update" />
+	</bean>
+	<bean name="/service.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="service" />
+	</bean>
+	<bean name="/servicechuga.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="servicechuga" />
+	</bean>
+	
+	<bean name="/servicejoin.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="servicejoin" />
+	</bean>
+	<bean name="/serviceup.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="serviceup" />
+	</bean>
+	<bean name="/sgogekjungbo.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="sgogekjungbo" />
+	</bean>
+	<bean name="/wc_update.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="wc_update" />
+	</bean>
+	
+
+	<!-- 실험용 -->
+</beans>

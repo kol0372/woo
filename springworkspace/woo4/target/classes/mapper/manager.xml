@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="manager">
+	<select id="loginok" parameterType="String" resultType="advo">
+		select mpwd,mname from member where mnum=#{mnum}
+	</select>
+	<select id="chooldonglist" parameterType="String" resultType="chooldonglist">
+		select s.snum, s.sname, s.saddress, d.mnum, d.dtime,d.dcontent,d.dtitle,m.mname 
+		from servicejoin s , dispatchrecord d, member m 
+		where s.snum=d.snum and d.mnum=m.mnum
+	</select>
+	<insert id="dispatchrecord" parameterType="dispatchrecord">
+		insert into dispatchrecord values(dispatchrecord_seq.nextVal,
+		#{dtime},#{dcontent},#{dtitle},#{snum},#{mnum})
+	</insert>
+	
+	
+	
+	
+	<insert id="addQnA" parameterType="qnavo">
+		insert into qna
+		(qnum,qtitle,qcontent,ref,seq,lvl,num)
+		values(
+		qna_seq.nextVal,#{qtitle},#{qcontent},qna_seq.nextVal,1,#{lvl},1
+		)
+	</insert>
+	<!-- 글 list -->
+	<select id="listQnA" resultType="qnavo">
+		select * from qna order by
+		ref desc, seq asc
+	</select>
+	<!-- 글 detail -->
+	<select id="detailQnA" resultType="qnavo" parameterType="int">
+		select * from qna where qnum=#{qnum}
+	</select>
+	<!-- 답글 -->
+	<update id="upboard" parameterType="qnavo">
+		update qna set seq= seq + 1 where seq >= #{seq} and 
+		ref=#{ref}
+	</update>
+	
+	<insert id="reboard" parameterType="qnavo">
+	insert into qna
+		(qnum,qtitle,qcontent,ref,seq,lvl,num)
+		values(
+		qna_seq.nextVal,#{qtitle},#{qcontent},#{ref},#{seq},#{lvl},1
+		)
+	
+	</insert>
+	
+	
+</mapper>

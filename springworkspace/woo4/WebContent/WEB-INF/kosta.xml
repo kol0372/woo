@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
+	<mvc:annotation-driven />
+	
+	<context:component-scan base-package="kosta" />
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+
+	</bean>
+
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles/tiles-definitions.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 실험용 -->
+	<bean name="/changePay.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="changePay" />
+	</bean>
+	<bean name="/chooldong.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="chooldong" />
+	</bean>
+	<bean name="/chooldonglist.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="chooldonglist" />
+	</bean>
+	<bean name="/client.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="client" />
+	</bean>
+	<bean name="/contract.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="contract" />
+	</bean>
+	<bean name="/contractregister.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="contractregister" />
+	</bean>
+	<bean name="/dept.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="dept" />
+	</bean>
+	<bean name="/gogo.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="gogo" />
+	</bean>
+
+	<bean name="/gogo2.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="gogo2" />
+	</bean>
+	<bean name="/login.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="login" />
+	</bean>
+	<bean name="/profile.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="profile" />
+	</bean>
+	<bean name="/request.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="request" />
+	</bean>
+	<bean name="/requestupdate.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="requestupdate" />
+	</bean>
+	<bean name="/sangdam_detail.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="sangdam_detail" />
+	</bean>
+	<bean name="/sangdam_deungrok.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="sangdam_deungrok" />
+	</bean>
+	<bean name="/sangdam_jaju.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="sangdam_jaju" />
+	</bean>
+	<bean name="/sangdam_moo_ut.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="sangdam_moo_ut" />
+	</bean>
+	<bean name="/sangdam.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="sangdam" />
+	</bean>
+	<bean name="/schedule.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="schedule" />
+	</bean>
+	<bean name="/seil.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="seil" />
+	</bean>	
+	<bean name="/seil2.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="seil2" />
+	</bean>
+	<bean name="/seil3.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="seil3" />
+	</bean>
+	<bean name="/seil4.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="seil4" />
+	</bean>
+	<bean name="/seil5.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="seil5" />
+	</bean>
+	<bean name="/seil6.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="seil6" />
+	</bean>
+	<bean name="/seil7.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="seil7" />
+	</bean>
+		<bean name="/y_chooldonglist.kosta"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="y_chooldonglist" />
+	</bean>
+
+
+
+	<!-- 실험용 -->
+</beans>

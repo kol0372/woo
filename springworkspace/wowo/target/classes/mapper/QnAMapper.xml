@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="QnA">
+	<insert id="addQnA" parameterType="vo.QnAVO">
+		insert into qna
+		(qnum,qtitle,qcontent,ref,seq,lvl,num)
+		values(
+		qna_seq.nextVal,#{qtitle},#{qcontent},qna_seq.nextVal,1,#{lvl},1
+		)
+	</insert>
+	<!-- 글 list -->
+	<select id="listQnA" resultType="vo.QnAVO">
+		select * from qna order by
+		ref desc, seq asc
+	</select>
+	<!-- 글 detail -->
+	<select id="detailQnA" resultType="vo.QnAVO" parameterType="int">
+		select * from qna where qnum=#{qnum}
+	</select>
+	<!-- 답글 -->
+	<update id="upboard" parameterType="vo.QnAVO">
+		update qna set seq= seq + 1 where seq >= #{seq} and 
+		ref=#{ref}
+	</update>
+	
+	<insert id="reboard" parameterType="vo.QnAVO">
+	insert into qna
+		(qnum,qtitle,qcontent,ref,seq,lvl)
+		values(
+		qna_seq.nextVal,#{qtitle},#{qcontent},#{ref},#{seq},#{lvl}
+		)
+	
+	</insert>
+
+
+
+
+
+
+
+
+
+	<!-- 트랜잭션 하기 위한 답글쓰기(insert) -->
+	<insert id="txreinboard" parameterType="vo.QnAVO">
+		insert into board2
+		(no,pwd,writer,subject,content,reip,ref)
+		values(board2_seq.nextVal,#{pwd},#{writer},
+		#{subject},#{content},#{reip},#{ref})
+	</insert>
+
+	<!-- 트랜잭션 하기 위한 답글쓰기(seq(글 갯수) update) -->
+	<update id="txreupboard" parameterType="vo.QnAVO">
+		update board2 set seq =
+		seq + 1 where seq > #{seq} and ref = #{ref}
+	</update>
+
+	
+
+</mapper>
